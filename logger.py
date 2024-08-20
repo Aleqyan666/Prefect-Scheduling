@@ -19,7 +19,7 @@ class CustomFormatter(logging.Formatter):
         logging.INFO: violet + format + reset,
         logging.WARNING: yellow + format + reset,
         logging.ERROR: red + format + reset,
-        logging.CRITICAL: bold_red + format + reset
+        logging.CRITICAL: bold_red + format + reset 
     }
     def format(self, record):
         """
@@ -28,7 +28,7 @@ class CustomFormatter(logging.Formatter):
         ----------
         record : takes the record
             
-
+ 
         Returns
         -------
         returns formated(colored) output

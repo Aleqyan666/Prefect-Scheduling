@@ -29,7 +29,7 @@ def read_csv(file_path):
     else:
         logger.critical(f"The file '{file_path}' doesn't exist.")
 
-@task
+@task 
 def second_task():
     logger.warning('Second task finished')
     
