@@ -4,4 +4,6 @@ prefect
 pandas
 time
 schedule
+pyodbc
+shapely
 # os 
