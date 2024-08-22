@@ -8,8 +8,8 @@ import time
 from logger import bcolors, CustomFormatter
 from prefect import flow, task
 
-path = 'data/games.csv'
-path2 = 'data/sample.csv'
+PATH = 'data/games.csv'
+PATH2 = 'data/sample.csv'
 
 logger = logging.getLogger(os.path.basename(__file__))
 logger.setLevel(logging.INFO)
@@ -19,7 +19,6 @@ logger.addHandler(ch)
 
 
 @task(persist_result=True) # Persists the task result for later retrieval
-
 def read_csv(file_path: str):
     """
     Read a CSV file into a DataFrame if it exists.
@@ -30,6 +29,7 @@ def read_csv(file_path: str):
     Returns:
         DataFrame: The data from the CSV, or None if the file doesn't exist.
     """
+    
     if os.path.exists(file_path):
         logger.info(f"The file '{file_path}' exists.")
         df = pd.read_csv(file_path)
@@ -57,6 +57,7 @@ def change_value(file_path: str, column_name: str, new_value: str):
         column_name (str): Column to update.
         new_value (str): New value to set for all rows in the column.
         """
+    
     df = read_csv(file_path)
     logger.info(f"Setting '{new_value}' as a new value for the column {column_name}.")
     df[column_name] = new_value
@@ -64,10 +65,10 @@ def change_value(file_path: str, column_name: str, new_value: str):
     df.to_csv(file_path, index=False)
     logger.info(f"Changes successfully applied to '{file_path}'")
     
-@flow(name="CSV Manipulation Flow")
-def csv_manipulation_flow():
+@flow(name="Testing Param Flow")
+def param_flow():
 
-    result_one = read_csv(path)
+    result_one = read_csv(PATH)
     time.sleep(60)
     result_two = second_task()
 
@@ -78,22 +79,17 @@ def csv_manipulation_flow():
 # Setup logger to log both to console and file
 logger = logging.getLogger(os.path.basename(__file__))
 logger.setLevel(logging.DEBUG)  # Capture all log levels
-
 # StreamHandler for console output
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)  # Ensuring that all levels are being captured
 ch.setFormatter(CustomFormatter())
 logger.addHandler(ch)
-
 # FileHandler for logging to a file
 current_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 log_file = f"logs/{os.path.basename(__file__)}_{current_time}.log"
 # log_file = f"logs/log_{current_time}.log" before was "log_2024-08-20_16-14-11.log"
-
-
 # Ensuring that the logs directory exists
 os.makedirs(os.path.dirname(log_file), exist_ok=True)
-
 # FileHandler for writing logs to a file
 fh = logging.FileHandler(log_file)
 fh.setLevel(logging.DEBUG)  # Ensuring that all levels are being captured
@@ -104,8 +100,7 @@ logger.addHandler(fh)
 
 if __name__=='__main__':
 
-    # read_csv('data/games.csv')
-    csv_manipulation_flow()
+    param_flow()
 
     for handler in logger.handlers:
         handler.flush()
