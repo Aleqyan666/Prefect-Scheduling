@@ -141,5 +141,8 @@ cython_debug/
 explore.ipynb
 .vscode
 
+#files intended for just editing and not retaining in the github project
+data_processing.py
+
 #Prefect
 .prefectignore
