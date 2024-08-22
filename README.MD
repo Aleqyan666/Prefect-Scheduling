@@ -44,4 +44,4 @@ This repository contains Prefect flows for automating data processing and schedu
 
 ### Contacts
 
-[Github Account](https://github.com/Aleqyan666)  |  [LinkedIn Account](https://www.linkedin.com/in/hayk-alekyan-900797204/)
+[Github Account](https://github.com/Aleqyan666)     |      [LinkedIn Account](https://www.linkedin.com/in/hayk-alekyan-900797204/)
