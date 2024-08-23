@@ -46,8 +46,6 @@ This repository contains Prefect flows for automating data processing and schedu
 ---
 Sometimes, you may need to adjust variable values. For example, if a flow executes a function that sends a message to User A when an email is received, you might also want to send it to User B. In this case, you can simply change the value of the parameter in the Prefect UI.
 
----
-
 After completing the steps(**8 Steps**) above, you may need to adjust the flow's parameter values (assuming the flow accepts arguments). To do this, navigate to the Prefect UI and assign the desired value to the parameter. Here's how to proceed:
 
 ---
