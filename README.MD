@@ -43,9 +43,14 @@ This repository contains Prefect flows for automating data processing and schedu
 - **STEP 8:** Open `http://127.0.0.1:4200/` in your browser.
 
 ### Changing parameters in prefect
+---
 Sometimes, you may need to adjust variable values. For example, if a flow executes a function that sends a message to User A when an email is received, you might also want to send it to User B. In this case, you can simply change the value of the parameter in the Prefect UI.
 
+---
+
 After completing the steps(**8 Steps**) above, you may need to adjust the flow's parameter values (assuming the flow accepts arguments). To do this, navigate to the Prefect UI and assign the desired value to the parameter. Here's how to proceed:
+
+---
 
 - **STEP 1:** Go to the **`Deployments`** section
 
@@ -63,6 +68,6 @@ After completing the steps(**8 Steps**) above, you may need to adjust the flow's
  
 - **STEP 8**: Click **`Run`** to start the process
 
-### Contacts
+## Contacts
 
 [Github Account](https://github.com/Aleqyan666)     |      [LinkedIn Account](https://www.linkedin.com/in/hayk-alekyan-900797204/)
