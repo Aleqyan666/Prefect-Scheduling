@@ -2,6 +2,18 @@
 
 This repository contains Prefect flows for automating data processing and scheduling tasks. Prefect orchestrates workflows and allows for efficient task management and monitoring.
 
+## Table of Contents
+
+- [Prefect Workflow Automation](#prefect-workflow-automation)
+  - [Table of Contents](#table-of-contents)
+  - [Project Structure](#project-structure)
+  - [Prefect Configuration](#prefect-configuration)
+    - [Start a Prefect Server](#start-a-prefect-server)
+      - [Steps to Deploy a Prefect Flow](#steps-to-deploy-a-prefect-flow)
+    - [Changing parameters in prefect](#changing-parameters-in-prefect)
+  - [Deploy with ease](#deploy-with-ease)
+  - [Contacts](#contacts)
+
 ## Project Structure
 
 - **/exceptions:** 
@@ -69,6 +81,18 @@ After completing the steps(**8 Steps**) above, you may need to adjust the flow's
 - **STEP 7:** Choose **`Quick Run`** for immediate execution or **`Custom Run`** for more options
  
 - **STEP 8**: Click **`Run`** to start the process
+
+## Deploy with ease
+
+---
+
+- **STEP 1:** Run in powershell `python .\prefect_activation\prefect_run.py` 
+
+- **STEP 2:** Run in powershell `python .\prefect_activation\prefect_deployment.py` 
+  
+- **STEP 3:** After ***STEP 2*** provide values of `deployment_name`, `file_name`, `flow_name` seperately
+  
+- **STEP 4:** Open `http://127.0.0.1:4200/` in your browser.
 
 ## Contacts
 
