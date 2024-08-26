@@ -88,7 +88,7 @@ After completing the steps(**8 Steps**) above, you may need to adjust the flow's
 
 - **STEP 1:** Run in powershell `python .\prefect_activation\prefect_run.py` 
 
-- **STEP 2:** Run in powershell `python .\prefect_activation\prefect_deployment.py` 
+- **STEP 2:** Run in another powershell `python .\prefect_activation\prefect_deployment.py` 
   
 - **STEP 3:** After ***STEP 2*** provide values of `deployment_name`, `file_name`, `flow_name` seperately
   
