@@ -4,17 +4,17 @@ This repository contains Prefect flows for automating data processing and schedu
 
 ## Project Structure
 
-- **/exceptions**: 
+- **/exceptions:** 
 
-    - The `exceptions/` folder contains custom exception classes for handling specific error cases in this project, improving error management and clarity in the code.
+    - the `exceptions/` folder contains custom exception classes for handling specific error cases in this project, improving error management and clarity in the code
 
-- **/data**:
+- **/data:**
 
-    - the `data/` folder contains all the csv files.
+    - the `data/` folder contains all the csv files
 
-- **/logs**: 
+- **/logs:** 
 
-    - The `logger.py` customizes Python's `logging` library to save all logs in the `logs/` folder. It provides centralized logging with easy integration into your Python scripts.
+    - the `logger.py` customizes Python's `logging` library to save all logs in the `logs/` folder. It provides centralized logging with easy integration into your Python scripts
 
 ## Prefect Configuration
 
