@@ -7,9 +7,7 @@ from datetime import timedelta
 import time
 from logger import bcolors, CustomFormatter
 from prefect import flow, task
-import exceptions.FileNotFoundException as FileFileNotFoundException
-import exceptions.OutOfBoundsException as OutOfBoundsException
-import exceptions.ColumnNotPresentException as ColumnNotPresentException
+from exceptions import FileNotFoundException, OutOfBoundsException, ColumnNotPresentException
 
 # Functions in this file:
 # - read_csv(file_path: str) -> pd.DataFrame:
@@ -53,7 +51,7 @@ def read_csv(file_path: str)-> pd.DataFrame:
 
     else:
         logger.critical(f"The file '{file_path}' doesn't exist.")
-        raise FileFileNotFoundException(file_path)
+        raise FileNotFoundException(file_path)
 
 
 def change_value(file_path: str, column_name: str, new_value: str):
