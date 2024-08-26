@@ -171,7 +171,13 @@ def sort_dataframe(df: pd.DataFrame, columns: list, ascending: bool = True) -> p
 
 
 
+@flow(name='Testing Flow', log_prints=True)
+def testing_bat():
+    test_test()
 
+@task
+def test_test():
+    print("test done!")
 
 @flow(name="CSV Manipulation Flow", log_prints=True) # Logs print statements within the flow.
 def csv_manipulation_flow():
