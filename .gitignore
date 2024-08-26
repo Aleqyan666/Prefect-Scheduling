@@ -140,6 +140,7 @@ cython_debug/
 #*.ipynb 
 explore.ipynb
 .vscode
+*-deployment.yaml
 
 #files intended for just editing and not retaining in the github project
 test
