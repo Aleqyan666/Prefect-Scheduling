@@ -3,9 +3,9 @@ REM Activate the virtual environment.
 call .venv\Scripts\Activate
 
 REM Prompting the user for input
-set /p deployment_name="Enter the Deployment name (e.g., Thursday Flow): "
-set /p file_name="Enter the File name (e.g., csv_param_test): "
-set /p flow_name="Enter the Flow name (e.g., param_flow): "
+set /p deployment_name="Enter the Deployment name (e.g., Email Sender): "
+set /p file_name="Enter the File name (e.g., sending_script): "
+set /p flow_name="Enter the Flow name (e.g., sending_flow): "
 
 REM Running the Prefect deployment build command
 echo Waiting 5 seonds before building the Prefect deployment...
