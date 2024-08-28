@@ -18,6 +18,8 @@ This repository contains Prefect flows for automating data processing and schedu
 
 ## Project Structure
 
+---
+
 - **/exceptions:** 
 
     - the `exceptions/` folder contains custom exception classes for handling specific error cases in this project, improving error management and clarity in the code
@@ -30,9 +32,26 @@ This repository contains Prefect flows for automating data processing and schedu
 
     - the `logger.py` customizes Python's `logging` library to save all logs in the `logs/` folder. It provides centralized logging with easy integration into your Python scripts
 
+- **/prefect_activation:**
+
+    - **`.bat`** files are used to execute commands for starting Prefect and running deployments.
+    - **`.py`** files are designed to execute these **`.bat`** files. 
+
+- **/latest_prefect:**
+
+    Improved version of prefect_activation
+    - **`.bat`** files are used to execute commands for starting Prefect and running deployments.
+    - **`.py`** files are designed to execute these **`.bat`** files.
+
 ## Latest Prefect
 
-Fill out values in ***latest_prefect/config_deploy.bat*** 
+Fill out values in ***latest_prefect/config_deploy.bat***
+  - **DEPLOYMENT_NAME:** Name of the deployment: *"Data_Ingestion_Pipeline"*
+  - **FILE_NAME:** Name of the file: *"data_ingest"* assuming it is a **.py** file 
+  - **FLOW_NAME:** Name of the flow: *"csv_manipulation_flow"* The name of function with **`@flow`** annotation 
+       that should be executed
+
+---
 
 - **STEP 1:** Open a ***powershell terminal*** and Run `python .\latest_prefect\run.py`
 
