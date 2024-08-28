@@ -7,11 +7,13 @@ This repository contains Prefect flows for automating data processing and schedu
 - [Prefect Workflow Automation](#prefect-workflow-automation)
   - [Table of Contents](#table-of-contents)
   - [Project Structure](#project-structure)
+  - [Latest Prefect](#latest-prefect)
   - [Prefect Configuration](#prefect-configuration)
     - [Start a Prefect Server](#start-a-prefect-server)
       - [Steps to Deploy a Prefect Flow](#steps-to-deploy-a-prefect-flow)
     - [Changing parameters in prefect](#changing-parameters-in-prefect)
   - [Deploy with ease](#deploy-with-ease)
+  - [Cron Scheduling Examples](#cron-scheduling-examples)
   - [Contacts](#contacts)
 
 ## Project Structure
@@ -27,6 +29,39 @@ This repository contains Prefect flows for automating data processing and schedu
 - **/logs:** 
 
     - the `logger.py` customizes Python's `logging` library to save all logs in the `logs/` folder. It provides centralized logging with easy integration into your Python scripts
+
+## Latest Prefect
+
+Fill out values in ***latest_prefect/config_deploy.bat*** 
+
+- **STEP 1:** Open a ***powershell terminal*** and Run `python .\latest_prefect\run.py`
+
+- **STEP 2:** Open another ***powershell terminal*** and Run `python .\latest_prefect\deploy.py`
+  - if you don't have any config file(.yaml) for deployment, you need to create one.
+  - Choose yes **`y`** to configure schedule for the deployment
+  - select **`Cron`**
+  - Provide a Cron string: *For Guidance* - [Cron Scheduling Examples](#cron-scheduling-examples)
+  - Provide a Timezone: example -> *`Asia/Yerevan`*
+  - Choose yes **`y`** to activate the schedule
+  - Then select the work pool
+  - Your Prefect workers will need access to this flow's code in order to run it. Would you like your 
+    workers to pull your flow code from a remote storage location when running this flow? **Select `n`**
+  - Choose if you would like to save configuration for this deployment for faster deployments in the future? **y/n**  
+  - Provide Work Pool Name
+
+- **STEP 3:** Open `http://127.0.0.1:4200/` in your browser.
+
+- **STEP 4:** Go to the **`Deployments`** section
+
+- **STEP 5:** Click on the name of the **deployment**
+
+- **STEP 6:** Click on **`⋮`** in the top right corner and select **`Edit`**
+
+- **STEP 6:** Click **`Run`** in the top right corner
+
+- **STEP 7:** Choose **`Quick Run`** for immediate execution or **`Custom Run`** for more options
+ 
+- **STEP 8**: Click **`Run`** to start the process
 
 ## Prefect Configuration
 
@@ -93,6 +128,20 @@ After completing the steps(**8 Steps**) above, you may need to adjust the flow's
 - **STEP 3:** After ***STEP 2*** provide values of `deployment_name`, `file_name`, `flow_name` seperately
   
 - **STEP 4:** Open `http://127.0.0.1:4200/` in your browser.
+
+## Cron Scheduling Examples
+
+---
+
+**Cron** is a useful tool for automating tasks by scheduling commands or scripts to run at specific times or intervals. Below are examples of how to set up cron schedules for particular scenarios.
+
+***Example 1:*** 
+    Schedule a Task to Run Every Day at 8:05 PM : `5 20 * * *`
+
+***Example 2:***
+    Schedule a Task to Run Every Wednesday: `* * * * 3`
+
+**NOTE**: Sunday is 0, Monday is 1...
 
 ## Contacts
 
