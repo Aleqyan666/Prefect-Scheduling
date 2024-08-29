@@ -7,8 +7,8 @@ This repository contains Prefect flows for automating data processing and schedu
 - [Prefect Workflow Automation](#prefect-workflow-automation)
   - [Table of Contents](#table-of-contents)
   - [Project Structure](#project-structure)
-  - [Latest Prefect](#latest-prefect)
-  - [Prefect Configuration](#prefect-configuration)
+  - [More automated Prefect !!! Latest Prefect Version](#more-automated-prefect--latest-prefect-version)
+  - [Prefect(manual version) Configuration](#prefectmanual-version-configuration)
     - [Start a Prefect Server](#start-a-prefect-server)
       - [Steps to Deploy a Prefect Flow](#steps-to-deploy-a-prefect-flow)
     - [Changing parameters in prefect](#changing-parameters-in-prefect)
@@ -43,7 +43,7 @@ This repository contains Prefect flows for automating data processing and schedu
     - **`.bat`** files are used to execute commands for starting Prefect and running deployments.
     - **`.py`** files are designed to execute these **`.bat`** files.
 
-## Latest Prefect
+## More automated Prefect !!! Latest Prefect Version
 
 Fill out values in ***latest_prefect/config_deploy.bat***
   - **DEPLOYMENT_NAME:** Name of the deployment: *"Data_Ingestion_Pipeline"*
@@ -82,7 +82,7 @@ Fill out values in ***latest_prefect/config_deploy.bat***
  
 - **STEP 8**: Click **`Run`** to start the process
 
-## Prefect Configuration
+## Prefect(manual version) Configuration 
 
 ### Start a Prefect Server 
 
