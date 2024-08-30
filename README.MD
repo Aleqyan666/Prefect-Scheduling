@@ -8,7 +8,7 @@ This repository contains Prefect flows for automating data processing and schedu
   - [Table of Contents](#table-of-contents)
   - [Project Structure](#project-structure)
   - [More automated Prefect !!! Latest Prefect Version](#more-automated-prefect--latest-prefect-version)
-  - [Prefect(manual version) Configuration](#prefectmanual-version-configuration)
+  - [Prefect (Manual Version) Configuration](#prefect-manual-version-configuration)
     - [Start a Prefect Server](#start-a-prefect-server)
       - [Steps to Deploy a Prefect Flow](#steps-to-deploy-a-prefect-flow)
     - [Changing parameters in prefect](#changing-parameters-in-prefect)
@@ -82,7 +82,7 @@ Fill out values in ***latest_prefect/config_deploy.bat***
  
 - **STEP 8**: Click **`Run`** to start the process
 
-## Prefect(manual version) Configuration 
+## Prefect (Manual Version) Configuration 
 
 ### Start a Prefect Server 
 
