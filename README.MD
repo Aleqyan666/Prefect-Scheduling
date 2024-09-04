@@ -8,6 +8,7 @@ This repository contains Prefect flows for automating data processing and schedu
   - [Table of Contents](#table-of-contents)
   - [Project Structure](#project-structure)
   - [More automated Prefect !!! Latest Prefect Version](#more-automated-prefect--latest-prefect-version)
+    - [If you want to start Prefect in your computer in sepereate powershell(different from the below one) run:](#if-you-want-to-start-prefect-in-your-computer-in-sepereate-powershelldifferent-from-the-below-one-run)
   - [Prefect (Manual Version) Configuration](#prefect-manual-version-configuration)
     - [Start a Prefect Server](#start-a-prefect-server)
       - [Steps to Deploy a Prefect Flow](#steps-to-deploy-a-prefect-flow)
@@ -46,8 +47,10 @@ This repository contains Prefect flows for automating data processing and schedu
 ## More automated Prefect !!! Latest Prefect Version
 
 ---
+  ### If you want to start Prefect in your computer in sepereate powershell(different from the below one) run:
+  **Run   `.\latest_prefect\run.py`**
 
-- **STEP 1:** Open a `.\latest_prefect\deploy.py` and fill out the values
+- **STEP 1:** Open `.\latest_prefect\deploy.py` and fill out the values
   - **DEPLOYMENT_NAME**: Name of the deployment: `Data_Ingestion_Pipeline`
   - **FILE_NAME**: Name of the file: `csv_util` it is a .py file
   - **FLOW_NAME**: Name of the flow: `csv_manipulation_flow` The name of function with *`@flow`* annotation that should be executed 
