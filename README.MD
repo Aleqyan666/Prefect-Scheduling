@@ -45,28 +45,18 @@ This repository contains Prefect flows for automating data processing and schedu
 
 ## More automated Prefect !!! Latest Prefect Version
 
-Fill out values in ***latest_prefect/config_deploy.bat***
-  - **DEPLOYMENT_NAME:** Name of the deployment: *"Data_Ingestion_Pipeline"*
-  - **FILE_NAME:** Name of the file: *"data_ingest"* assuming it is a **.py** file 
-  - **FLOW_NAME:** Name of the flow: *"csv_manipulation_flow"* The name of function with **`@flow`** annotation 
-       that should be executed
-
 ---
 
-- **STEP 1:** Open a ***powershell terminal*** and Run `python .\latest_prefect\run.py`
+- **STEP 1:** Open a `.\latest_prefect\deploy.py` and fill out the values
+  - **DEPLOYMENT_NAME**: Name of the deployment: `Data_Ingestion_Pipeline`
+  - **FILE_NAME**: Name of the file: `csv_util` it is a .py file
+  - **FLOW_NAME**: Name of the flow: `csv_manipulation_flow` The name of function with *`@flow`* annotation that should be executed 
+  - **CRON_SCHEDULE** = The schedule of deployment: `'2 2 * * 2'`  
+      - *More on scheduling here:* [Cron Scheduling Examples](#cron-scheduling-examples)
+  - **TIMEZONE** = Name of the timezone:`'Asia/Yerevan'`
+  - **WORK_POOL** = Name of the pool: `'first_pool'`
 
-- **STEP 2:** Open another ***powershell terminal*** and Run `python .\latest_prefect\deploy.py`
-  - if you don't have any config file(.yaml) for deployment, you need to create one.
-  - Choose yes **`y`** to configure schedule for the deployment
-  - select **`Cron`**
-  - Provide a Cron string: *For Guidance* - [Cron Scheduling Examples](#cron-scheduling-examples)
-  - Provide a Timezone: example -> *`Asia/Yerevan`*
-  - Choose yes **`y`** to activate the schedule
-  - Then select the work pool
-  - Your Prefect workers will need access to this flow's code in order to run it. Would you like your 
-    workers to pull your flow code from a remote storage location when running this flow? **Select `n`**
-  - Choose if you would like to save configuration for this deployment for faster deployments in the future? **y/n**  
-  - Provide Work Pool Name
+- **STEP 2:** Open ***powershell terminal*** and Run `python .\latest_prefect\deploy.py`
 
 - **STEP 3:** Open `http://127.0.0.1:4200/` in your browser.
 
