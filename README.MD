@@ -8,13 +8,16 @@ This repository contains Prefect flows for automating data processing and schedu
   - [Table of Contents](#table-of-contents)
   - [Project Structure](#project-structure)
   - [More automated Prefect !!! Latest Prefect Version](#more-automated-prefect--latest-prefect-version)
-    - [If you want to start Prefect in your computer in sepereate powershell(different from the below one) run:](#if-you-want-to-start-prefect-in-your-computer-in-sepereate-powershelldifferent-from-the-below-one-run)
+    - [If you want to start Prefect in your computer in seperate powershell(different from the below one):](#if-you-want-to-start-prefect-in-your-computer-in-seperate-powershelldifferent-from-the-below-one)
+    - [Optional](#optional)
   - [Prefect (Manual Version) Configuration](#prefect-manual-version-configuration)
     - [Start a Prefect Server](#start-a-prefect-server)
       - [Steps to Deploy a Prefect Flow](#steps-to-deploy-a-prefect-flow)
     - [Changing parameters in prefect](#changing-parameters-in-prefect)
   - [Deploy with ease](#deploy-with-ease)
   - [Cron Scheduling Examples](#cron-scheduling-examples)
+    - [**In a Cron Schedule:**](#in-a-cron-schedule)
+      - [`<minute> <hour> <day of month> <month> <day of week>`](#minute-hour-day-of-month-month-day-of-week)
   - [Contacts](#contacts)
 
 ## Project Structure
@@ -33,21 +36,22 @@ This repository contains Prefect flows for automating data processing and schedu
 
     - the `logger.py` customizes Python's `logging` library to save all logs in the `logs/` folder. It provides centralized logging with easy integration into your Python scripts
 
-- **/prefect_activation:**
-
-    - **`.bat`** files are used to execute commands for starting Prefect and running deployments.
-    - **`.py`** files are designed to execute these **`.bat`** files. 
-
 - **/latest_prefect:**
 
-    Improved version of prefect_activation
+    Fully automated and improved version of ***/prefect_activation***
     - **`.bat`** files are used to execute commands for starting Prefect and running deployments.
     - **`.py`** files are designed to execute these **`.bat`** files.
+
+- **/prefect_activation:**
+
+    More manual version of Prefect
+    - **`.bat`** files are used to execute commands for starting Prefect and running deployments.
+    - **`.py`** files are designed to execute these **`.bat`** files. 
 
 ## More automated Prefect !!! Latest Prefect Version
 
 ---
-  ### If you want to start Prefect in your computer in sepereate powershell(different from the below one) run:
+  ### If you want to start Prefect in your computer in seperate powershell(different from the below one):
   **Run   `.\latest_prefect\run.py`**
 
 - **STEP 1:** Open `.\latest_prefect\deploy.py` and fill out the values
@@ -56,13 +60,14 @@ This repository contains Prefect flows for automating data processing and schedu
   - **FLOW_NAME**: Name of the flow: `csv_manipulation_flow` The name of function with *`@flow`* annotation that should be executed 
   - **CRON_SCHEDULE** = The schedule of deployment: `'2 2 * * 2'`  
       - *More on scheduling here:* [Cron Scheduling Examples](#cron-scheduling-examples)
-  - **TIMEZONE** = Name of the timezone:`'Asia/Yerevan'`
-  - **WORK_POOL** = Name of the pool: `'first_pool'`
+  - **TIMEZONE**: Name of the timezone:`'Asia/Yerevan'`
+  - **WORK_POOL**: Name of the pool: `'first_pool'`
 
 - **STEP 2:** Open ***powershell terminal*** and Run `python .\latest_prefect\deploy.py`
 
-- **STEP 3:** Open `http://127.0.0.1:4200/` in your browser.
+- **STEP 3:** Open `http://127.0.0.1:4200/` in your browser. 
 
+### Optional
 - **STEP 4:** Go to the **`Deployments`** section
 
 - **STEP 5:** Click on the name of the **deployment**
@@ -147,13 +152,32 @@ After completing the steps(**8 Steps**) above, you may need to adjust the flow's
 
 **Cron** is a useful tool for automating tasks by scheduling commands or scripts to run at specific times or intervals. Below are examples of how to set up cron schedules for particular scenarios.
 
+### **In a Cron Schedule:**
+#### `<minute> <hour> <day of month> <month> <day of week>`
+
 ***Example 1:*** 
-    Schedule a Task to Run Every Day at 8:05 PM : `5 20 * * *`
+  - Schedule a Task to Run Every Day at 8:05 PM : `5 20 * * *`
 
 ***Example 2:***
-    Schedule a Task to Run Every Wednesday: `* * * * 3`
+  - Schedule a Task to Run Every Wednesday: `* * * * 3`
 
-**NOTE**: Sunday is 0, Monday is 1...
+***Example 3:***
+  - Schedule a Task to Run Every Friday at 6:00 PM: `0 18 * * 5`
+
+***Example 4:***
+  - Schedule a Task to Run Every 15 Minutes: `*/15 * * * *`
+
+***Example 5:***
+  - Schedule a Task to Run at 7:00 AM on the 1st and 15th of Every Month: `0 7 1,15 * *`
+
+***Example 6:***
+  - Schedule a Task to Run at 5:30 PM Every Day in July: `30 17 * 7 *`
+
+***Example 7:***
+  - Schedule a Task to Run at 12:00 PM on the 10th of June: `0 12 10 6 *`
+  
+***Example 8:***
+  - Schedule a Task to Run at 9:00 AM Every Day in March, June, and September: `0 9 * 3,6,9 *`
 
 ## Contacts
 
