@@ -17,7 +17,7 @@ REM Deploy the flow with the provided parameters and automatically answer prompt
 ) | prefect deploy -n "%DEPLOYMENT_NAME%" "%FILE_NAME%.py:%FLOW_NAME%" --cron %CRON_SCHEDULE% --timezone %TIMEZONE% --pool %WORK_POOL%
 
 REM Starting the Prefect Worker with the specified work pool
-prefect worker start --pool "%WORK_POOL%" 
+@REM prefect worker start --pool "%WORK_POOL%" 
 
 @echo
 @echo

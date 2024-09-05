@@ -3,7 +3,7 @@ import subprocess
 # Path to batch script
 script_path = "latest_prefect\\config_deploy.bat"
 
-DEPLOYMENT_NAME = 'qquoteschanged'
+DEPLOYMENT_NAME = 'Noway'
 FILE_NAME = 'csv_util'
 FLOW_NAME = 'csv_manipulation_flow'
 CRON_SCHEDULE = '2 2 * * 2'

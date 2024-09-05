@@ -48,13 +48,17 @@ This repository contains Prefect flows for automating data processing and schedu
     - **`.bat`** files are used to execute commands for starting Prefect and running deployments.
     - **`.py`** files are designed to execute these **`.bat`** files. 
 
+---
+
 ## More automated Prefect !!! Latest Prefect Version
 
----
   ### If you want to start Prefect in your computer in seperate powershell(different from the below one):
-  **Run   `.\latest_prefect\run.py`**
 
-- **STEP 1:** Open `.\latest_prefect\deploy.py` and fill out the values
+- **NOTE:** Make sure that in `.\latest_prefect\pool_activate.bat` is set right value of **`pool`**
+
+- **STEP 1:** Open ***powershell terminal*** and Run `python .\latest_prefect\run.py`
+
+- **STEP 2:** Open `.\latest_prefect\deploy.py` and fill out the values
   - **DEPLOYMENT_NAME**: Name of the deployment: `Data_Ingestion_Pipeline`
   - **FILE_NAME**: Name of the file: `csv_util` it is a .py file
   - **FLOW_NAME**: Name of the flow: `csv_manipulation_flow` The name of function with *`@flow`* annotation that should be executed 
@@ -63,14 +67,14 @@ This repository contains Prefect flows for automating data processing and schedu
   - **TIMEZONE**: Name of the timezone:`'Asia/Yerevan'`
   - **WORK_POOL**: Name of the pool: `'first_pool'`
 
-- **STEP 2:** Open ***powershell terminal*** and Run `python .\latest_prefect\deploy.py`
+- **STEP 3:** Open ***powershell terminal*** and Run `python .\latest_prefect\deploy.py`
 
-- **STEP 3:** Open `http://127.0.0.1:4200/` in your browser. 
+- **STEP 4:** Open `http://127.0.0.1:4200/` in your browser. 
 
 ### Optional
 - **STEP 4:** Go to the **`Deployments`** section
 
-- **STEP 5:** Click on the name of the **deployment**
+- **STEP 5:** Click on the name of the *deployment*
 
 - **STEP 6:** Click on **`⋮`** in the top right corner and select **`Edit`**
 
