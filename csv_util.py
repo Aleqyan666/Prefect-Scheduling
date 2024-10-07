@@ -28,7 +28,7 @@ ch.setFormatter(CustomFormatter())
 logger.addHandler(ch)
 
 
-@task(persist_result=True) # Persists the task result for later retrieval
+@task(persist_result=True, log_prints=True) # Persists the task result for later retrieval and Adds logs to Prefect UI's logs
 def read_csv(file_path: str)-> pd.DataFrame:
     """
     Read a CSV file into a DataFrame if it exists.
@@ -189,7 +189,7 @@ def csv_manipulation_flow():
     print(result_two)
 
 
-@task(persist_result=True) # Persists the task result for later retrieval
+@task(persist_result=True, log_prints=True) # Persists the task result for later retrieval
 def second_task():
     logger.warning('Second task finished')
 
@@ -221,8 +221,14 @@ logger.addHandler(fh)
 
 if __name__=='__main__':
 
-    # read_csv('data/games.csv')
     csv_manipulation_flow()
+    # csv_manipulation_flow.serve(
+    #     name="Daily Jobberman Data Pipeline",
+    #     cron="59 23 * * *",  # Schedule to run every day at 11:59 PM
+    #     tags=["Jobberman", "job scraping", "data pipeline", "automation"],
+    #     description="This pipeline automates the scraping, cleaning, and saving of job data from Jobberman on a daily basis.",
+    #     version="jobberman-pipeline/v1.0",  
+    # ) 
 
     for handler in logger.handlers:
         handler.flush()
