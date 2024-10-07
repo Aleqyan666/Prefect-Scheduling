@@ -1,14 +1,15 @@
 # Prefect Workflow Automation
 
-This repository contains Prefect flows for automating data processing and scheduling tasks. Prefect orchestrates workflows and allows for efficient task management and monitoring.
+### *This repository contains Prefect flows for automating data processing and scheduling tasks. Prefect orchestrates workflows and allows for efficient task management and monitoring.*
 
 ## Table of Contents
 
 - [Prefect Workflow Automation](#prefect-workflow-automation)
+      - [*This repository contains Prefect flows for automating data processing and scheduling tasks. Prefect orchestrates workflows and allows for efficient task management and monitoring.*](#this-repository-contains-prefect-flows-for-automating-data-processing-and-scheduling-tasks-prefect-orchestrates-workflows-and-allows-for-efficient-task-management-and-monitoring)
   - [Table of Contents](#table-of-contents)
   - [Project Structure](#project-structure)
   - [More automated Prefect !!! Latest Prefect Version](#more-automated-prefect--latest-prefect-version)
-    - [If you want to start Prefect in your computer in seperate powershell(different from the below one):](#if-you-want-to-start-prefect-in-your-computer-in-seperate-powershelldifferent-from-the-below-one)
+    - [If you want to start Prefect in your computer in seperate powershell  (different from the below one):](#if-you-want-to-start-prefect-in-your-computer-in-seperate-powershell--different-from-the-below-one)
     - [Optional](#optional)
   - [Prefect (Manual Version) Configuration](#prefect-manual-version-configuration)
     - [Start a Prefect Server](#start-a-prefect-server)
@@ -52,9 +53,10 @@ This repository contains Prefect flows for automating data processing and schedu
 
 ## More automated Prefect !!! Latest Prefect Version
 
-  ### If you want to start Prefect in your computer in seperate powershell(different from the below one):
+  ### If you want to start Prefect in your computer in seperate powershell  (different from the below one):
 
-- **NOTE:** Make sure that in `.\latest_prefect\pool_activate.bat` is set right value of **`pool`**
+no hard coding should be done do it in *`pool_activate.bat`*
+- ***NOTE:** Make sure that in `.\latest_prefect\pool_activate.bat` is set right value of **`pool`***
 
 - **STEP 1:** Open ***powershell terminal*** and Run `python .\latest_prefect\run.py`
 
@@ -83,6 +85,8 @@ This repository contains Prefect flows for automating data processing and schedu
 - **STEP 7:** Choose **`Quick Run`** for immediate execution or **`Custom Run`** for more options
  
 - **STEP 8**: Click **`Run`** to start the process
+
+---
 
 ## Prefect (Manual Version) Configuration 
 
