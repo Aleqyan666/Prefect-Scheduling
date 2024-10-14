@@ -38,7 +38,7 @@ import pandas as pd
 from prefect import flow, task
 from prefect.artifacts import create_markdown_artifact
 
-@task
+@task(persist_result=True, log_prints=True)
 def read_csv_file(file_path: str) -> pd.DataFrame:
     df = pd.read_csv(file_path)
     
@@ -50,7 +50,7 @@ def read_csv_file(file_path: str) -> pd.DataFrame:
     
     return df
 
-@flow(name="Artifact testing")
+@flow(name="Persisted Testing 2", log_prints=True)
 def process_csv_files():
     df1 = read_csv_file("data/games.csv")
     df2 = read_csv_file("data/sample.csv")
